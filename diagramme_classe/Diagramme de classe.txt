@@ -29,6 +29,7 @@ ClassDiagram [frame=true framecolor=steelblue label="Class Diagram"] {
  }
  class Bookmaker {
   private Name : string
+  private password:string
   public definir(nomEvenement: string, typeSport: string)
   public parametrer(cote:double, plafondMise: double)
   
