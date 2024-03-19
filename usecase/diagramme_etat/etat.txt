@@ -11,4 +11,13 @@
   typePari->confirmer "confirmer le paris "
  
 }
+StateDiagram [frame=true framecolor=steelblue label="Etats Evenement" splines=ortho] {
+  
+  state Evenement
+  state Terminé
+  state Annulé 
+  Evenement -> Annulé "En Cours"
+  Evenement -> Terminé 
+ 
+}
  
