@@ -1,0 +1,97 @@
+SequenceDiagram [frame=true framecolor=steelblue label="Sequence Diagram Inscription"] {
+  actor parieur
+  lifeline "API" as API autoactivate
+ 	lifeline "Paul:User" as p autoactivate
+  parieur --> API "Inscription(Paul22, Paul, 2000)"
+  API --> p "Inscription(Paul22, Paul,2000, capital initial:10.000.000)"
+  
+  activate API
+ 
+  API <-r- p "Ok"
+  parieur <-r- API "Inscrit"
+}
+
+
+
+
+SequenceDiagram [frame=true framecolor=steelblue label="Sequence Diagram Authentification"] {
+  actor utilisateur
+  lifeline "API" as API autoactivate
+ 	lifeline "Paul:User" as p autoactivate
+  utilisateur --> API "Connexion(Paul22, Paul, 2000)"
+  API --> p "Connexion(2000)"
+  
+  activate API
+ 
+  API <-r- p "Ok"
+  utilisateur <-r- API "connecté"
+}
+
+
+SequenceDiagram [frame=true framecolor=steelblue label="Sequence Diagram DefinirEvenement"] {
+  actor bookmaker
+  lifeline "API" as API autoactivate
+ 	lifeline "Classico:Evenement" as c autoactivate
+  bookmaker --> API "CréerEvenement(1,classico, football)"
+  API --> c "Creation(1,classico)"
+  
+  activate API
+ 
+  API <-r- c "Ok"
+  bookmaker <-r- API "créé"
+}
+
+
+SequenceDiagram [frame=true framecolor=steelblue label="Sequence Diagram ParametreEvenement"] {
+  actor bookmaker
+  lifeline "API" as API autoactivate
+ lifeline "Classico:Evenement" as c autoactivate
+  bookmaker --> API "Evenement(1,[1.45,5], 500)"
+  API --> c "Parametrage(1,classico)"
+  
+  activate API
+ 
+  API <-r- c "Ok"
+  bookmaker <-r- API "OK"
+}
+
+
+
+SequenceDiagram [frame=true framecolor=steelblue label="Sequence Diagram Informations"] {
+  lifeline "API" as API autoactivate
+  lifeline "Source tiers" as s autoactivate
+ 	lifeline "Evenement Sportif" as e autoactivate
+  lifeline "Bookmaker" as b autoactivate
+  s --> API  "Envoie de données en temps réel"
+  API --> e  "Mise à jour avec les données reçues"
+  API --> b  "Notifie des changements ou mise à jour"
+  API --> API "Traitement des données reçues"
+  activate API
+ 
+ 
+  
+}
+
+
+
+SequenceDiagram [frame=true framecolor=steelblue label="Sequence Diagram Parier"] {
+  actor "Paul: parieur " as parieur
+  lifeline "API" as API autoactivate
+  lifeline "Evenement" as e autoactivate
+  lifeline "Pari" as p autoactivate
+  parieur --> API "Choisir un evenement (Classico)"
+  API --> e "Verifier l'evenement(Classico)"
+  parieur <-- API "Confirmation evenement(Classico)"
+  parieur --> API "Choisir un type de pari (pari simple)"
+  API --> p "Verifier le type de pari (pari simple)"
+  parieur <-- API "Confirmation du type de pari (pari simple)"
+  parieur --> API "Saisir le resultat du pari (2-1 pour PSG)"
+  parieur --> API "Choisir le montant du pari (50)"
+  API --> parieur "Confirmer le montant du pari"
+  parieur --> API "soumettre le ticket ()"
+  API --> p "Enregistrement du pari"
+  API --> parieur "Debiter le compte de paul et confirmer l'enregistrement du pari"
+
+  activate API
+
+}

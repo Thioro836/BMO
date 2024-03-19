@@ -1,0 +1,23 @@
+UseCaseDiagram [frame=true framecolor=steelblue label="Paris Sportif"] {
+  actor p as "Parieur"
+  actor b as "Bookmaker"
+  actor a as "API"
+  system "Paris Sportif" as sys{
+  
+  usecase u2 as "Parier"
+  usecase u3 as "Inscription"
+  usecase u5 as "Authentification"
+  usecase u6 as "Definir un evenement"
+  usecase u7 as "Parametrer un evenement"
+  usecase u8 as "Fournir les informations"
+    }
+  
+  p -- u2
+  p -- u3
+  
+  p -- u5
+  b -- u5
+  b -- u6
+  b -- u7
+  u8 -- a
+}

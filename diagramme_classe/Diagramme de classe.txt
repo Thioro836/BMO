@@ -1,0 +1,52 @@
+ClassDiagram [frame=true framecolor=steelblue label="Class Diagram"] {
+ 
+ class Parieur {
+  private userId : string
+  private nom : string
+   private password: string
+  private solde: double
+  public consulter (solde: double)
+  public parier(typePari: string)
+  
+ }
+  
+ class Sport {
+  private nomSport : string
+  private regleSport: string
+   
+  
+ }
+ class Paris {
+   private idPari :integer
+   private nomParieur :string
+   private typePari: string
+   private OptionPari: string
+   private ResultatPari : string
+   private montant :double
+   private evenement : string
+   
+  
+ }
+ class Bookmaker {
+  private Name : string
+  public definir(nomEvenement: string, typeSport: string)
+  public parametrer(cote:double, plafondMise: double)
+  
+ }
+ 
+ class EvenementSportif {
+   private idEvenement :integer
+   private dateEvenement :Date
+   private heure:DateTime
+   private nomEvenement: string
+   private typeSport :string
+   private coteEvenement: double
+   private plafondMise: double
+ }
+  
+  Parieur "1" -- "0..*" Paris;
+  EvenementSportif "1" -- "1..*" Paris;
+  EvenementSportif "0..*" -- "1" Sport;
+  EvenementSportif "1..*" -- "1" Bookmaker;
+ 
+  }
