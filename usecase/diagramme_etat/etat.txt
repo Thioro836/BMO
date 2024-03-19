@@ -1,0 +1,14 @@
+
+  
+  StateDiagram[frame=true framecolor=steelblue label="Diagramme d'état Paris"] 
+{ state parier 
+  state typePari
+  state annuler
+  state confirmer
+  state Parametre initialState->parier "Selectionne evenement"
+  parier->typePari "choisir un type de pari(simple ou avancé)" 
+  typePari->annuler "annuler "
+  typePari->confirmer "confirmer le paris "
+ 
+}
+ 
