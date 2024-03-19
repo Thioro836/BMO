@@ -1,0 +1,10 @@
+Parieur
+Parier: Les parieurs peuvent placer des paris sur des événements sportifs.
+Inscription: Les nouveaux utilisateurs peuvent s'inscrire sur la plateforme de paris.
+Authentification: Les utilisateurs peuvent se connecter à leur compte existant.
+Bookmaker
+Authentification: Les bookmakers peuvent se connecter à leur compte.
+Définir un Événement: Les bookmakers peuvent créer de nouveaux événements sportifs.
+Paramétrer un Événement: Les bookmakers peuvent configurer les détails des événements créés.
+API
+Fournir les Informations: L'API fournit des données en temps réel sur les événements sportifs aux utilisateurs du système.
