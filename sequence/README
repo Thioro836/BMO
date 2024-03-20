@@ -1,7 +1,7 @@
-Diagrammes de séquence :
- pour chaque cas d\'utilisations nous avons fait un diagramme de séquence pour :
-Cas d\'utilisation Parier :ici ce que nous appelons parier c’est choisir un évènement sportif ,
-un type de pari , le résultat parié , le montant qu’il veut parier en jetons, puis soumet le ticket au système donc tout ce que le parieur doit faire pour placer un pari en ligne .
+// Diagrammes de séquence
+ //pour chaque cas d\'utilisations nous avons fait un diagramme de séquence pour :
+//Cas d\'utilisation Parier :ici ce que nous appelons parier c’est choisir un évènement sportif ,
+//un type de pari , le résultat parié , le montant qu’il veut parier en jetons, puis soumet le ticket au système donc tout ce que le parieur doit faire pour placer un pari en ligne .
 Cas d\'utilisation Inscription : Ce diagramme illustre le processus d\'inscription d'un utilisateur,
  où un parieur s\'inscrit sur la plateforme en fournissant des informations telles que son nom d'utilisateur, son nom et son solde initial.
 Cas d\'utilisation authentification : ici que ce soit le parieur ou le bookmaker chaque acteur doit s’authentifier avant d’effectuer une action

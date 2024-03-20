@@ -1,7 +1,7 @@
-Pour ce diagramme nous avons les classes (Parieur, Sport, Pari, Bookmaker, EvenementSportif)
-Parieur: représente un utilisateur qui peut consulter son solde, placer des paris   simples ou avancés.
-Sport: contient des informations sur différents sports, y compris leurs règles spécifiques.
-Paris: enregistre les paris placés par les parieurs, avec des détails tels que le type de pari, l'option de pari, le résultat, le montant misé, et l'événement concerné.
-Bookmaker: gère les événements sportifs, définit les paramètres comme les cotes et les plafonds de mise.
-EvenementSportif: représente un événement sportif spécifique, avec des détails tels que la date, l'heure, le nom, le type de sport, les cotes, et les paramètres définis par le bookmaker.
-Nous n’avons pas jugé nécessaire de représenter une classe typePari qui héritera de paris car nous avons deux types de paris (simple et avancé) qui ont tous deux les mêmes attributs, donc nous avons trouvé judicieux  de la definir comme attribut dans la classe paris qui sera géré lors de la conception de sorte que lorsqu’un parieur sélectionne le type de pari souhaité il ne verra que les options liées à ce paris.
+//Pour ce diagramme nous avons les classes (Parieur, Sport, Pari, Bookmaker, EvenementSportif)
+//Parieur: représente un utilisateur qui peut consulter son solde, placer des paris   simples ou avancés.
+//Sport: contient des informations sur différents sports, y compris leurs règles spécifiques.
+//Paris: enregistre les paris placés par les parieurs, avec des détails tels que le type de pari, l'option de pari, le résultat, le montant misé, et l'événement concerné.
+//Bookmaker: gère les événements sportifs, définit les paramètres comme les cotes et les plafonds de mise.
+//EvenementSportif: représente un événement sportif spécifique, avec des détails tels que la date, l'heure, le nom, le type de sport, les cotes, et les paramètres définis par le bookmaker.
+//Nous n’avons pas jugé nécessaire de représenter une classe typePari qui héritera de paris car nous avons deux types de paris (simple et avancé) qui ont tous deux les mêmes attributs, donc nous avons trouvé judicieux  de la definir comme attribut dans la classe paris qui sera géré lors de la conception de sorte que lorsqu’un parieur sélectionne le type de pari souhaité il ne verra que les options liées à ce paris.
