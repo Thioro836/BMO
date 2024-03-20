@@ -1,0 +1,31 @@
+/*C1*/SET SCHEMA SYSTEM_LOBS
+INSERT INTO BLOCKS VALUES(0,2147483647,0)
+COMMIT
+/*C2*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C5*/SET SCHEMA PUBLIC
+create table Bookmaker (id varchar(32) not null, email varchar(150), isAdmin boolean, password varchar(50), pseudo varchar(50), primary key (id))
+create table EvenementSportif (id varchar(32) not null, cote varchar(50), dateEvenement timestamp, heure varchar(50), nomEvenement varchar(50), plafondMise double, typeSport varchar(50), bookmaker_id varchar(32), primary key (id))
+create table IMAGES (ID varchar(32) not null, GALLERY varchar(32), image varbinary(16777216), primary key (ID))
+create table OXDISCUSSIONCOMMENTS (id varchar(32) not null, comment clob(16777216), discussionId varchar(32), time timestamp, userName varchar(30), primary key (id))
+create table Parieur (id varchar(32) not null, email varchar(50), nom varchar(50), password varchar(20), pseudo varchar(15), solde double, primary key (id))
+create table Paris (id varchar(32) not null, ResultatPari varchar(50), evenement varchar(50), nomParieur varchar(50), solde double, libelle varchar(255), optionPari varchar(255), evenementSportif_id varchar(32), parieur_id varchar(32), primary key (id))
+create table Sport (id varchar(32) not null, nomSport varchar(50), regleSport varchar(50), primary key (id))
+create table YourFirstEntity (id varchar(32) not null, amount numeric(19,2), date date, description varchar(50), primary key (id))
+create index IDXbhlx4vunn24ym1tbrlgq8g30m on OXDISCUSSIONCOMMENTS (discussionId)
+alter table EvenementSportif add constraint FKne9a24flnqj1fqeutslah7tbo foreign key (bookmaker_id) references Bookmaker
+alter table Paris add constraint FKm96ny6ftldjbofi6xb7n6sijf foreign key (evenementSportif_id) references EvenementSportif
+alter table Paris add constraint FKflpsfu6e6asdb54leqxicu0a8 foreign key (parieur_id) references Parieur
+/*C3*/SET SCHEMA PUBLIC
+INSERT INTO BOOKMAKER VALUES('4028b8818e5db067018e5db29d960000','fatouthioro24@gmail.com',TRUE,'fatou200','FB')
+COMMIT
+INSERT INTO EVENEMENTSPORTIF VALUES('4028b8818e5db067018e5db3529d0001','2.5','2024-03-06 00:00:00.000000','10','Classico',3000.0E0,'football','4028b8818e5db067018e5db29d960000')
+COMMIT
+INSERT INTO PARIEUR VALUES('4028b8818e5db067018e5db58d2d0002','diagana@gmail.com','Diagana','diagna200','MD',3000.0E0)
+COMMIT
+INSERT INTO BOOKMAKER VALUES('4028b8818e5db067018e5db5fc220003','bah@gmail.com',FALSE,'Fatou1962','BA')
+COMMIT
+INSERT INTO EVENEMENTSPORTIF VALUES('4028b8818e5db067018e5db6a1a70004','2.6','2024-03-07 00:00:00.000000','12','C',3000.0E0,'basket','4028b8818e5db067018e5db29d960000')
+COMMIT
+INSERT INTO SPORT VALUES('4028b8818e5db067018e5db6f7570005','Football','carton jaune')
+COMMIT
